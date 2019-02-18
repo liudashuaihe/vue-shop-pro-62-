@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
 import Welcome from '@/components/Welcome'
+import User from '@/components/User'
 Vue.use(Router)
 
 var router = new Router({
@@ -11,6 +12,7 @@ var router = new Router({
       {path:'/welcome',component:Welcome}
     ]},
     { path: '/login', component: Login }
+    {payh:'/users',component:User}
   ]
 })
 router.beforeEach((to,from,next) =>{
