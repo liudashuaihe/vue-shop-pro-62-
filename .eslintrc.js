@@ -21,6 +21,16 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'comma-dangle':[
+      'error',
+      {
+        arrays:'ignore',
+        objects:'ignore',
+        imports:'ignore',
+        functions:'ignore'
+      }
+    ],
+    'spce-before-function-paren':['error','never'],
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
