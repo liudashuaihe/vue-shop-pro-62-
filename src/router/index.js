@@ -8,11 +8,21 @@ Vue.use(Router)
 
 var router = new Router({
   routes: [
-    { path: '/home', component: Home, redirect:'/welcome',children:[
-      {path:'/welcome',component:Welcome}
-    ]},
-    { path: '/login', component: Login }
-    {payh:'/users',component:User}
+    { path: '/login', component: Login },
+    { 
+      path: '/home', 
+      component: Home, 
+      redirect:'/welcome',
+      children:[
+      {path:'/welcome',component:Welcome}  ,
+      {path:'/users',component:User}
+    ]
+  }
+
+
+
+
+
   ]
 })
 router.beforeEach((to,from,next) =>{

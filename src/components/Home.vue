@@ -24,10 +24,10 @@
           :collapse-transition="false"
           :router="true"
         >
-          <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
+          <el-submenu :index="item.id+''" v-for="(item,k) in menuList" :key="item.id"
+           :style="menushow ? 'width:65px;' : 'width:200px;'"> 
             <template slot="title">
                 <i :class="'iconfont icon-'+menuicon[k]"></i>
-              <i class="el-icon-location"></i>
               <span>{{item.authName}}</span>
             </template>
             <el-menu-item 
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
       async getMenuList(){
-          const{ data: res } = await this.$http.get('/menus')
+          const { data: res } = await this.$http.get('/menus')
           if(res.meta.status !== 200) {
               return this.$message.error(res.meta.msg)
           }
